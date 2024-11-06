@@ -13,7 +13,9 @@ class NotebookController extends Controller
 
     public function store(Request $request) {
         $notebook = new Notebook;
-        $path = $request->image->store('images', 'public');
+        if(isset($request->image)) {
+            $path = $request->image->store('images', 'public');
+        } else $path = '';
         $notebook->FIO = $request->FIO;
         $notebook->company = $request->company;
         $notebook->phone = $request->phone;
