@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 Route::group([
-    'prefix' => 'api/v1/notebook/'
+    'prefix' => 'api/v1/'
 ], function () {
-    Route::get('', 'App\Http\Controllers\NotebookController@index');
+    Route::get('notebook', 'App\Http\Controllers\NotebookController@index');
 });
