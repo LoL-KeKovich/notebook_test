@@ -12,7 +12,15 @@ class NotebookController extends Controller
     }
 
     public function store(Request $request) {
-        Notebook::create($request->all());
+        $notebook = new Notebook;
+        $path = $request->image->store('images', 'public');
+        $notebook->FIO = $request->FIO;
+        $notebook->company = $request->company;
+        $notebook->phone = $request->phone;
+        $notebook->email = $request->email;
+        $notebook->birthday = $request->birthday;
+        $notebook->image = $path;
+        $notebook->save();
         return(json_encode('created'));
     }
 
