@@ -26,4 +26,9 @@ class NotebookController extends Controller
         $notebook->update($request->all());
         return(json_encode('updated'));
     }
+
+    public function delete($id) {
+        Notebook::destroy($id);
+        return(json_encode('deleted'));
+    }
 }
