@@ -9,6 +9,5 @@ Route::get('/', function () {
 Route::group([
     'prefix' => 'api/v1/notebook/'
 ], function () {
-    Route::post('create', 'App\Http\Controllers\UserController@store');
-    Route::put('update', 'App\Http\Controllers\UserController@update');
+    Route::get('', 'App\Http\Controllers\NotebookController@index');
 });
