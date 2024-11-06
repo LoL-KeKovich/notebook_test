@@ -20,4 +20,10 @@ class NotebookController extends Controller
         $notebook = Notebook::find($id);
         return (json_encode($notebook));
     }
+
+    public function update(Request $request, $id) {
+        $notebook = Notebook::find($id);
+        $notebook->update($request->all());
+        return(json_encode('updated'));
+    }
 }

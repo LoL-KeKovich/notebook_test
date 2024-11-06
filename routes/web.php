@@ -8,4 +8,5 @@ Route::group([
     Route::get('notebook', 'App\Http\Controllers\NotebookController@index');
     Route::post('notebook', 'App\Http\Controllers\NotebookController@store');
     Route::get('notebook/{id}', 'App\Http\Controllers\NotebookController@findById');
+    Route::post('notebook/{id}', 'App\Http\Controllers\NotebookController@update');
 });
