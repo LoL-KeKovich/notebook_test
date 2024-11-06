@@ -11,5 +11,8 @@ class NotebookController extends Controller
         return (json_encode($notebooks));
     }
 
-
+    public function store(Request $request) {
+        Notebook::create($request->all());
+        return(json_encode('created'));
+    }
 }
