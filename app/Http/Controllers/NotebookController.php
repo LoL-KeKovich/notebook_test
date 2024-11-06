@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class NotebookController extends Controller
 {
     public function index() {
-        $notebooks = Notebook::all();
+        $notebooks = Notebook::paginate(5);
         return (json_encode($notebooks));
     }
 
