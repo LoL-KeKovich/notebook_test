@@ -15,4 +15,9 @@ class NotebookController extends Controller
         Notebook::create($request->all());
         return(json_encode('created'));
     }
+
+    public function findById($id) {
+        $notebook = Notebook::find($id);
+        return (json_encode($notebook));
+    }
 }
